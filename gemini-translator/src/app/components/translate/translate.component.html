@@ -1,1 +1,36 @@
-<p>translate works!</p>
+<div class="container">
+    <h1>Gemini Translator</h1>
+    <div class="upload-section">
+        <input type="file" (change)="onFileSelected($event)">
+        <button (click)="translateFile()">Translate File</button>
+    </div>
+    <div *ngIf="translatedFile" class="result-section">
+        <h2>Translated File</h2>
+        <p>{{ translatedFile }}</p>
+    </div>
+</div>
+<div class="translate-section">
+    <h2>Translate Text</h2>
+    <textarea [(ngModel)]="textToTranslate" placeholder="Enter text here"></textarea>
+    <button (click)="translateText()">Translate Text</button>
+    <div *ngIf="translatedText">
+        <h3>Translated Text</h3>
+        <p>{{ translatedText }}</p>
+    </div>
+</div>
+
+<!-- <textarea [(ngModel)]="textToTranslate" placeholder="Enter text here"></textarea>
+<button (click)="translateText()">Translate Text</button>
+
+<input type="file" (change)="onFileSelected($event)" />
+<input type="text" [(ngModel)]="targetLanguage" placeholder="Target Language (e.g., French, Spanish)"> <button (click)="translateFile()">Translate File</button>
+
+<div *ngIf="translatedText">
+  <h2>Translated Text:</h2>
+  <pre>{{ translatedText }}</pre>
+</div>
+
+<div *ngIf="translatedFile">
+  <h2>Translated File:</h2>
+  <pre>{{ translatedFile }}</pre>
+</div> -->
